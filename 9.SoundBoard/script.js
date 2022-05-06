@@ -1,12 +1,12 @@
 const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong']
 
 sounds.forEach(sound => {
-  const button = document.createElement('button')
+  const btn = document.createElement('button')
   btn.classList.add('btn')
 
   btn.innerText = sound
 
-  button.addEventListener('click', () => {
+  btn.addEventListener('click', () => {
     stopSongs()
     document.getElementById('sound').onplay()
   })
@@ -18,7 +18,7 @@ function stopSongs() {
   sounds.forEach(sound => {
     const song = document.getElementById('sound')
 
-    song.onpause()
+    song.pause()
     song.currentTime = 0;
   })
 }
